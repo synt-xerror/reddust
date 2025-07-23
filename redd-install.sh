@@ -47,7 +47,7 @@ sudo tee "$MIME_DIR/reddust.xml" > /dev/null <<EOF
 </mime-info>
 EOF
 sudo update-mime-database /usr/share/mime
-sudo update-icon-caches /usr/share/icons/*
+sudo gtk-update-icon-cache -f /usr/share/icons/hicolor
 
 # 5. VSCode Syntax
 echo "[INFO] Instalando suporte para VSCode..."
