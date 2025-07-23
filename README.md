@@ -9,6 +9,8 @@
 **RedDust** é uma linguagem minimalista projetada para simular lógica em um computador construído com Redstone no *Minecraft*, especificamente o 7SPM.  
 Este repositório contém o interpretador, suporte para sintaxe em múltiplos editores e scripts para instalação global.
 
+Confira a [documentação](DOCS.md)
+
 ---
 
 ## **📌 Funcionalidades**
