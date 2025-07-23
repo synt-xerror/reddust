@@ -1,0 +1,28 @@
+{
+  "name": "reddust",
+  "displayName": "RedDust Language",
+  "description": "Syntax highlighting for RedDust (.redd)",
+  "version": "1.0.0",
+  "publisher": "Syntax Echonomics",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "icon": "icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "reddust",
+        "aliases": ["RedDust", "reddust"],
+        "extensions": [".redd"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "reddust",
+        "scopeName": "source.reddust",
+        "path": "./reddust.tmLanguage.json"
+      }
+    ]
+  }
+}

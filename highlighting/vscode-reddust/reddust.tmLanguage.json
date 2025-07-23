@@ -1,0 +1,19 @@
+{
+  "scopeName": "source.reddust",
+  "patterns": [
+
+    {
+      "name": "keyword.control.reddust",
+      "match": "^(\\s*[0-9A-F])(?=;)"
+    },
+
+    {
+      "name": "constant.numeric.reddust",
+      "match": "\\b[0-9A-F]\\b"
+    },
+    {
+      "name": "comment.line.double-slash.reddust",
+      "match": "//.*$"
+    }
+  ]
+}
