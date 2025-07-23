@@ -5,7 +5,7 @@ INSTALL_DIR="/usr/local/bin"
 ICON_DIR="/usr/share/icons/reddust"
 MIME_DIR="/usr/share/mime/packages"
 VSCODE_EXT_DIR="$HOME/.vscode/extensions/reddust-syntax"
-GITHUB_RAW="https://raw.githubusercontent.com/SynthX7/RedDust/main"
+GITHUB_RAW="https://raw.githubusercontent.com/SynthX7/reddust/main"
 
 echo "[INFO] Iniciando instalação do RedDust..."
 
