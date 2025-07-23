@@ -14,6 +14,7 @@ CMD;A;B;C
 - **CMD** → Código da instrução (0 a F)
 - **A, B, C** → Operandos (endereços de memória ou valores imediatos)
 - Cada instrução ocupa **4 dígitos obrigatórios** para manter compatibilidade com a arquitetura 7SPM.
+- Valores em hexadecimal de **1 digito**, e em letra maiúscula.
 
 Exemplo:
 ```
