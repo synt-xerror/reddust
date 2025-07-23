@@ -4,7 +4,6 @@ set -e
 INSTALL_DIR="/usr/local/bin"
 ICON_DIR="/usr/share/icons/reddust"
 MIME_DIR="/usr/share/mime/packages"
-VSCODE_EXT_DIR="$HOME/.vscode/extensions/reddust-syntax"
 GITHUB_RAW="https://raw.githubusercontent.com/SynthX7/reddust/main"
 
 echo "[INFO] Iniciando instalação do RedDust..."
@@ -47,30 +46,55 @@ sudo tee "$MIME_DIR/reddust.xml" > /dev/null <<EOF
 </mime-info>
 EOF
 sudo update-mime-database /usr/share/mime
-sudo gtk-update-icon-cache -f /usr/share/icons/hicolor
+if command -v gtk-update-icon-cache &> /dev/null; then
+    sudo gtk-update-icon-cache -f /usr/share/icons/hicolor
+fi
 
-# 5. VSCode Syntax
-echo "[INFO] Instalando suporte para VSCode..."
-mkdir -p "$VSCODE_EXT_DIR"
-curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/package.json" -o "$VSCODE_EXT_DIR/package.json"
-curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/reddust.tmLanguage.json" -o "$VSCODE_EXT_DIR/reddust.tmLanguage.json"
-curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/language-configuration.json" -o "$VSCODE_EXT_DIR/language-configuration.json"
-curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/icon.png" -o "$VSCODE_EXT_DIR/icon.png"
+# 5. VSCode Syntax (somente se VSCode estiver instalado)
+echo "[INFO] Verificando VSCode..."
+if [ -d "$HOME/.vscode/extensions" ]; then
+    echo "[INFO] Instalando suporte para VSCode..."
+    EXT_DIR="$HOME/.vscode/extensions/reddust-syntax"
+    mkdir -p "$EXT_DIR"
+    curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/package.json" -o "$EXT_DIR/package.json"
+    curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/reddust.tmLanguage.json" -o "$EXT_DIR/reddust.tmLanguage.json"
+    curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/language-configuration.json" -o "$EXT_DIR/language-configuration.json"
+    curl -fsSL "$GITHUB_RAW/highlighting/vscode-reddust/icon.png" -o "$EXT_DIR/icon.png"
+else
+    echo "[AVISO] VSCode não encontrado (pasta ~/.vscode/extensions ausente). Pulei a instalação."
+fi
 
 # 6. Geany Syntax
-echo "[INFO] Instalando suporte para Geany..."
-mkdir -p ~/.config/geany/filedefs
-curl -fsSL "$GITHUB_RAW/highlighting/geany-reddust/filetypes.reddust.conf" -o ~/.config/geany/filedefs/filetypes.reddust.conf
+echo "[INFO] Verificando Geany..."
+if [ -d "$HOME/.config/geany/filedefs" ]; then
+    echo "[INFO] Instalando suporte para Geany..."
+    curl -fsSL "$GITHUB_RAW/highlighting/geany-reddust/filetypes.reddust.conf" -o "$HOME/.config/geany/filedefs/filetypes.reddust.conf"
+else
+    echo "[AVISO] Geany não encontrado (pasta ~/.config/geany/filedefs ausente). Pulei a instalação."
+fi
 
 # 7. Vim Syntax
-echo "[INFO] Instalando suporte para Vim..."
-mkdir -p ~/.vim/syntax
-curl -fsSL "$GITHUB_RAW/highlighting/vim-reddust/reddust.vim" -o ~/.vim/syntax/reddust.vim
-grep -qxF 'au BufNewFile,BufRead *.redd set filetype=reddust' ~/.vimrc || echo 'au BufNewFile,BufRead *.redd set filetype=reddust' >> ~/.vimrc
+echo "[INFO] Verificando Vim..."
+if [ -d "$HOME/.vim" ]; then
+    mkdir -p "$HOME/.vim/syntax"
+    curl -fsSL "$GITHUB_RAW/highlighting/vim-reddust/reddust.vim" -o "$HOME/.vim/syntax/reddust.vim"
+    if [ -f "$HOME/.vimrc" ]; then
+        grep -qxF 'au BufNewFile,BufRead *.redd set filetype=reddust' "$HOME/.vimrc" || echo 'au BufNewFile,BufRead *.redd set filetype=reddust' >> "$HOME/.vimrc"
+    else
+        echo "[AVISO] ~/.vimrc não encontrado. Pulei configuração automática do Vim."
+    fi
+else
+    echo "[AVISO] Vim não encontrado (pasta ~/.vim ausente). Pulei a instalação."
+fi
 
-# Nano (opcional)
-mkdir -p ~/.nano
-grep -qxF 'include ~/.nano/reddust.nanorc' ~/.nanorc || echo '# Syntax RedDust\ninclude ~/.nano/reddust.nanorc' >> ~/.nanorc
+# 8. Nano Syntax
+if [ -f "$HOME/.nanorc" ]; then
+    mkdir -p "$HOME/.nano"
+    grep -qxF 'include ~/.nano/reddust.nanorc' "$HOME/.nanorc" || echo 'include ~/.nano/reddust.nanorc' >> "$HOME/.nanorc"
+    curl -fsSL "$GITHUB_RAW/highlighting/nano-reddust/reddust.nanorc" -o "$HOME/.nano/reddust.nanorc"
+else
+    echo "[AVISO] ~/.nanorc não encontrado. Pulei suporte ao Nano."
+fi
 
 echo "[INFO] Instalação concluída! É recomendável reiniciar o sistema ou a sessão atual."
 echo "✅ Use com: reddust arquivo.redd"
