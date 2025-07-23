@@ -20,7 +20,6 @@ Este repositório contém o interpretador, suporte para sintaxe em múltiplos ed
 - [x] **Geany**
 - [x] **Vim**
 - [ ] Nano (em breve)  
-✔ Instalação fácil via **curl**  
 
 ---
 
