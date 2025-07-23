@@ -1,7 +1,7 @@
 # **RedDust Language**  
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Python](https://img.shields.io/badge/python-3.x-yellow)
+![Python](https://img.shields.io/badge/python-3-yellow)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
 
 ![RedDust Icon](highlighting/vscode-reddust/icon.png)
