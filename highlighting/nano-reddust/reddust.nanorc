@@ -1,0 +1,12 @@
+## RedDust syntax for Nano
+
+syntax "reddust" "\.redd$"
+
+# Comentários
+color green "//.*$"
+
+# Comandos - apenas o primeiro dígito HEX (0-F) no começo da linha, antes do ';'
+color brightred "^[0-9A-F];"
+
+# Números hexadecimais isolados
+color brightcyan "\b[0-9A-F]\b"
