@@ -6,7 +6,7 @@
 
 ![RedDust Icon](highlighting/vscode-reddust/icon.png)
 
-**RedDust** é uma linguagem minimalista projetada para simular lógica em computadores construídos com Redstone no *Minecraft*.  
+**RedDust** é uma linguagem minimalista projetada para simular lógica em um computador construído com Redstone no *Minecraft*, especificamente o 7SPM.  
 Este repositório contém o interpretador, suporte para sintaxe em múltiplos editores e scripts para instalação global.
 
 ---
@@ -136,13 +136,6 @@ reddust hello.redd
 | D      | MOVE              | Copia valor entre endereços            |
 | E      | INC/DEC           | Incrementa ou decrementa (flag)        |
 | F      | WAIT              | Pausa em segundos                      |
-
----
-
-## **📌 Roadmap**
-- [ ] Suporte para Nano  
-- [ ] Pacote `.deb` e `.pkg.tar.zst`  
-- [ ] Simulador gráfico opcional  
 
 ---
 
