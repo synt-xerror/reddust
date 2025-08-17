@@ -142,5 +142,5 @@ reddust hello.redd
 ---
 
 ## **👨‍💻 Autor**
-**Syntax Echonomics**  
+**Syntax**  
 [GitHub](https://github.com/SynthX7)
