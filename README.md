@@ -4,7 +4,8 @@
 ![Python](https://img.shields.io/badge/python-3-yellow)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
 
-![RedDust Icon](highlighting/vscode-reddust/icon.png)
+<img width="400" height="200" alt="reddust" src="https://github.com/user-attachments/assets/4927d3b0-8a93-4edf-b9b5-eedd22718957" />
+
 
 **RedDust** é uma linguagem minimalista projetada para simular lógica em um computador construído com Redstone no *Minecraft*, especificamente o 7SPM.  
 Este repositório contém o interpretador, suporte para sintaxe em múltiplos editores e scripts para instalação global.
