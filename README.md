@@ -30,7 +30,7 @@ Confira a [documentação](DOCS.md)
 Execute:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SynthX7/RedDust/main/redd-install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/synt-xerror/RedDust/main/redd-install.sh | bash
 ```
 
 ✅ Após a instalação:
@@ -43,7 +43,7 @@ reddust --help
 
 ## **🗑️ Desinstalação**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/SynthX7/RedDust/main/redd-uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/synt-xerror/RedDust/main/redd-uninstall.sh | bash
 ```
 
 ---
