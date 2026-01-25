@@ -4,7 +4,8 @@
 ![Python](https://img.shields.io/badge/python-3-yellow)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
 
-<img width="400" height="200" alt="reddust" src="https://github.com/user-attachments/assets/4927d3b0-8a93-4edf-b9b5-eedd22718957" />
+<img width="1000" height="500" alt="Inserir um título(1)" src="https://github.com/user-attachments/assets/323b1f5e-5e44-4c48-989e-47eff36bf2d6" />
+
 
 status: [rotating](https://github.com/synt-xerror/synt-xerror)
 
