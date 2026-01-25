@@ -28,4 +28,4 @@ Feito! RedDust foi instalada no seu sistema. Para usar:
 reddust <arquivo.redd> --opção
 ```
 
-Confia a [documentação](DOCS.md) para saber mais sobre.
+Confia a [wiki](https://github.com/synt-xerror/reddust/wiki) para saber mais sobre.
