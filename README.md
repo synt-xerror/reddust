@@ -1,8 +1,14 @@
 <img width="1000" height="500" alt="Inserir um título(1)" src="https://github.com/user-attachments/assets/323b1f5e-5e44-4c48-989e-47eff36bf2d6" />
 
-![Status](https://img.shields.io/badge/status-beta-yellow)
+![Status](https://img.shields.io/badge/status-inactive-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3-yellow)
+
+⚠️⚠️ ESTA BRANCH NÃO É MAIS MANTIDA ⚠️⚠️
+
+A branch `main` contém um código que não é mais mantido pelo autor. Em vez disso, a branch `master` segue com uma versão mais recente e com updates frequentes.
+
+---
 
 **RedDust** é uma linguagem minimalista projetada para simular lógica em um computador construído com Redstone no *Minecraft*, especificamente o 7SPM.  
 Este repositório contém o interpretador, suporte para sintaxe em múltiplos editores e scripts para instalação global.
