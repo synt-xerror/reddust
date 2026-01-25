@@ -1,142 +1,31 @@
 <img width="1000" height="500" alt="Inserir um título(1)" src="https://github.com/user-attachments/assets/323b1f5e-5e44-4c48-989e-47eff36bf2d6" />
 
 ![Status](https://img.shields.io/badge/status-experimental-yellow)
-![License](https://img.shields.io/badge/license-MIT-blue)
+![License](https://img.shields.io/badge/license-GPLv3.0-blue)
 
-*RedDust* é uma linguagem de programação
+⚠️ **Esse projeto está em fase experimental, e não está totalmente pronto. Bugs e inconsistencias devem aparecer. Caso note alguma grave, deixe sua issue!**
 
-Confira a [documentação](DOCS.md)
+**RedDust** é uma linguagem de programação minimalista, criada para ser rápida, simples e educativa. Essa linguagem é pensada para rodar em projetos de CPUs caseiras, como hoje tem sido escolhida para programas em computadores de redstone no game *Minecraft*.
 
----
+Nesse repositório você econtra o código fonte do interpretador da linguagem, escrito em C.
 
-## **📌 Funcionalidades**
-✔ Interpretador `reddust` disponível globalmente  
-✔ `--help`, `--version`, `--debug` adicionados  
-✔ Ícone e associação de arquivos `.redd` no sistema  
-✔ Syntax Highlight para:
-- [x] **VSCode**
-- [x] **Geany**
-- [x] **Vim**
-- [ ] Nano (em breve)  
+# Instalação (Linux):
 
----
-
-## **🚀 Instalação Rápida**
-Execute:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/synt-xerror/RedDust/main/redd-install.sh | bash
+Clone o repositório e entre no diretório:
+```
+git clone https://github.com/synt-xerror/reddust
+cd reddust
 ```
 
-✅ Após a instalação:
-
-```bash
-reddust --help
+Dentro do diretório, rode:
+```
+sudo make install
 ```
 
----
+Feito! RedDust foi instalada no seu sistema. Para usar:
 
-## **🗑️ Desinstalação**
-```bash
-curl -fsSL https://raw.githubusercontent.com/synt-xerror/RedDust/main/redd-uninstall.sh | bash
+```
+reddust <arquivo.redd> --opção
 ```
 
----
-
-## **📦 Requisitos**
-- Linux (Debian/Ubuntu, Arch testado)
-- **Python 3** (instalado automaticamente se não existir)
-- Curl (`sudo apt-get install curl` ou `sudo pacman -S curl`)
-
----
-
-## **📖 Como usar**
-### **Modo arquivo**
-```bash
-reddust programa.redd
-```
-
-### **Modo interativo (REPL)**
-```bash
-reddust
-```
-
-### **Opções adicionais**
-```
---help        Mostra ajuda
---version     Exibe versão do interpretador
---debug       Executa mostrando estado da memória
-```
-
----
-
-## **📂 Estrutura do Projeto**
-```
-RedDust/
-├── highlighting
-│   ├── geany-reddust
-│   │   └── filetypes.reddust.conf
-│   ├── vim-reddust
-│   │   └── reddust.vim
-│   └── vscode-reddust
-│       ├── icon.png
-│       ├── language-configuration.json
-│       ├── package.json
-│       ├── reddust-1.0.0.vsix
-│       └── reddust.tmLanguage.json
-├── icon
-│   └── reddust.png
-├── redd-install.sh
-├── redd-uninstall.sh
-└── reddust
-```
-
----
-
-## **🖌 Suporte para editores**
-✔ **VSCode:** instalado automaticamente pelo script  
-✔ **Geany:** syntax highlight básico  
-✔ **Vim:** syntax highlight com grupos (Keywords, Numbers, Comments)  
-
----
-
-## **📜 Exemplo de programa (`hello.redd`)**
-```
-// Solicita valor do usuário e exibe
-1;1;0;0   // INPUT → mem[1]
-2;1;0;0   // OUTPUT mem[1]
-0;0;0;0   // HALT
-```
-
-Execute:
-```bash
-reddust hello.redd
-```
-
----
-
-## **🔢 Tabela de Instruções**
-| Código | Instrução         | Descrição                              |
-|--------|-------------------|----------------------------------------|
-| 0      | HALT              | Finaliza execução                      |
-| 1      | INPUT             | Lê valor do usuário (ou imediato)      |
-| 2      | OUTPUT            | Exibe valor de um endereço             |
-| 3      | ADD               | Soma (A+B → C)                         |
-| 4      | SUB               | Subtração (A-B → C)                    |
-| 5      | DIV               | Divisão inteira                        |
-| 6      | MUL               | Multiplicação                          |
-| 7      | COND JUMP         | Salta se valor = esperado              |
-| 8      | JUMP              | Salto incondicional                    |
-| 9      | CLEAR             | Zera memória no endereço               |
-| A      | RANDOM            | Aleatório (0-15) em endereço           |
-| B      | CMP GREATER       | 1 se A>B, senão 0                      |
-| C      | CMP EQUAL         | 1 se A=B, senão 0                      |
-| D      | MOVE              | Copia valor entre endereços            |
-| E      | INC/DEC           | Incrementa ou decrementa (flag)        |
-| F      | WAIT              | Pausa em segundos                      |
-
----
-
-## **👨‍💻 Autor**
-**Syntax**  
-[GitHub](https://github.com/SynthX7)
+Confia a [documentação](DOCS.md) para saber mais sobre.
