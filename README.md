@@ -19,6 +19,7 @@ cd reddust
 
 Dentro do diretório, rode:
 ```
+make
 sudo make install
 ```
 
